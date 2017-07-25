@@ -1,0 +1,21 @@
+<div class="login-content" ng-controller="loginController">
+	<div class="header-name">
+		<h1> Vegetarian Food Finder </h1>
+	</div>
+
+	<form class="loginForm" name="Form" novalidate>
+		<input type="email" placeholder="Email Address" name="email" ng-model="email" required><br>
+		<span class="validationError" ng-show="Form.email.$dirty && Form.email.$invalid">
+			<span ng-show="Form.email.$error.required">Email is required.</span>
+			<span ng-show="Form.email.$error.email">Enter a Valid email address.</span>
+		</span>
+		<br><br>
+		<input type="password" placeholder="Password" name="password" minlength="6" ng-model="password" required><br>
+		<span class="validationError" ng-show="Form.password.$dirty && Form.password.$invalid">
+			<span ng-show="Form.password.$error.required">Password is required.</span>
+			<span ng-show="Form.password.$error.minlength">Minimum Length should be 6 characters.</span>
+		</span>
+		<br><br>
+		<button type="button" ng-disabled="Form.$invalid">Submit</button>
+	</form>
+</div>

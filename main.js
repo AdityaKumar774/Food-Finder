@@ -4,7 +4,7 @@ var foodFinder = angular.module('foodFinder', ['ngRoute']);
 //Configuration
 function routeConfiguration($routeProvider){
 	$routeProvider.when('/', {
-		templateUrl: 'index.html'
+		templateUrl: 'pages/loginPage.html'
 	});
 }
 	

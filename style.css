@@ -1,7 +1,15 @@
+body{
+	background-image: url(1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+
 .header-name{
 	text-align: center;
 	text-decoration: underline;
-	padding-top: 50px;
+	padding-top: 90px;
+	color: #D9D9D9;
 }
 
 .loginForm{
@@ -21,4 +29,6 @@
 
 .validationError{
 	color: red;
+	font-size: 25px;
+	font-weight: 900;
 }
