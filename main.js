@@ -7,7 +7,7 @@ function routeConfiguration($routeProvider){
 		templateUrl: 'pages/loginPage.html'
 	});
 	$routeProvider.when('/home', {
-		templateUrl: 'pages/mainPage.html'
+		templateUrl: 'pages/restaurantName.html'
 	});
 }
 	
@@ -18,47 +18,74 @@ foodFinder.controller('loginController', function($scope){
 	console.log('Login Controller')
 });
 
-//Main Controller
+//Restaurant Lists
 foodFinder.service('restaurantService', function(){
 	this.restaurantLists = [
 		{
 			name: 'Indian Accent',
 			location: 'New Delhi',
 			meal_for_two: 'Rs. 5000/-',
-			favourites: 'The Tasting Menu',
-			recommended_for: 'A special occasion, birthday or anniversary'
+			recommended_for: 'A special occasion, birthday or anniversary',
+			image: '1.jpg',
+			rating: '4.5',
+			favourites: {
+				dish_name: 'The Tasting Menu',
+				dish_image:''
+			}
 		},
 		{
 			name: 'Peshwari',
 			location: 'Mumbai',
 			meal_for_two: 'Rs. 5000/-',
-			favourites: 'Sikandari Raan and Dal Bukhara',
-			recommended_for: 'For your fix of great North-Indian food in a city where it’s fairly elusive'
+			recommended_for: 'For your fix of great North-Indian food in a city where it’s fairly elusive',
+			image: '2.jpg',
+			rating: '4.1',
+			favourites: {
+				dish_name: 'Sikandari Raan and Dal Bukhara',
+				dish_image:''
+			}
 		},
 		{
 			name: 'Villa Maya',
 			location: 'Trivandrum',
 			meal_for_two: 'Rs. 4000/-',
-			favourites: 'Kerala Special and Fish Tikka',
-			recommended_for: 'Calm and peace and leaving the chaos of the world outside'
+			recommended_for: 'Calm and peace and leaving the chaos of the world outside',
+			image: '3.jpg',
+			rating: '4.3',
+			favourites: {
+				dish_name: 'Kerala Special and Fish Tikka',
+				dish_image:''
+			}
 		},
 		{
 			name: 'Bukhara',
 			location: 'New Delhi',
 			meal_for_two: 'Rs. 7000/-',
-			favourites: 'Dal Bukhara is legendary (albeit creamy and heavy)',
-			recommended_for: 'Taking your International clients for an Indian meal'
+			recommended_for: 'Taking your International clients for an Indian meal',
+			image: '4.jpg',
+			rating: '4.0',
+			favourites: {
+				dish_name: 'Dal Bukhara is legendary (albeit creamy and heavy)',
+				dish_image: ''
+			}
 		},
 		{
 			name: 'Pinch of Spice',
 			location: 'Agra',
 			meal_for_two: 'Rs. 1300/-',
-			favourites: 'Punjabi meat',
-			recommended_for: 'A quick meal when in town'
+			recommended_for: 'A quick meal when in town',
+			image: '5.jpg',
+			rating: '4.7',
+			favourites: {
+				dish_name: 'Punjabi meat',
+				dish_image: ''
+			}
 		}
 	]
 });
 
+
+//Main Controller
 foodFinder.controller('mainController', function($scope, restaurantService) {
 	$scope.restaurantLists = restaurantService.restaurantLists;
 });

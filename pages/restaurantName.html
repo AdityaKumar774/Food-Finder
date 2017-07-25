@@ -1,0 +1,21 @@
+<div class="main-content" ng-controller="mainController"> <br>
+	<input type="text" ng-model="search" placeholder="Search...">
+	<h1> Restaurants Around You </h1>
+	<ul class="list" ng-repeat="Restaurant in restaurantLists | filter:search">
+		<li>
+			<a class="restaurant-name" href="#">
+				{{ Restaurant.name }}
+			</a> <br> <br>
+			<span class="restaurant-images">
+					<img src="images/{{ Restaurant.image }}">
+			</span> <br>
+			<span class="restaurant-location">
+				{{ Restaurant.location }}
+			</span> <br>
+			<span class="restaurant-rating">
+				<i class="fa fa-star-o"></i> &nbsp;
+				{{ Restaurant.rating }}
+			</span>
+		</li>
+	</ul>
+</div>
