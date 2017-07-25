@@ -1,0 +1,18 @@
+.header-name{
+	text-align: center;
+}
+
+.loginForm{
+	text-align: center;
+}
+
+.loginForm input{
+	height: 30px;
+	width: 300px;
+}
+
+.loginForm button{
+	height: 40px;
+	width: 60px;
+	font-weight: 800;
+}

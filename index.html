@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="foodFinder">
+	<head>
+		<title> Vegetarian Food Finder </title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="angular-route.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="login-content" ng-controller="loginController">
+			
+			<div class="header-name">
+				<h1> Vegetarian Food Finder </h1>
+			</div>
+			
+			<form class="loginForm">
+				<input type="email" placeholder="Valid Email" required><br><br>
+				<input type="password" placeholder="Password" required><br><br>
+				<input type="button" value="Submit" ng-click="redirect()">
+			</form>
+			
+		</div>
+	</body>
+</html>
