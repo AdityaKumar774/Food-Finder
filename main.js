@@ -6,6 +6,9 @@ function routeConfiguration($routeProvider){
 	$routeProvider.when('/', {
 		templateUrl: 'pages/loginPage.html'
 	});
+	$routeProvider.when('/home', {
+		templateUrl: 'pages/mainPage.html'
+	});
 }
 	
 foodFinder.config(routeConfiguration);
@@ -15,3 +18,7 @@ foodFinder.controller('loginController', function($scope){
 	console.log('Login Controller')
 });
 
+//Main Controller
+foodFinder.controller('mainController', function($scope){
+	console.log('Main Controller')
+});
