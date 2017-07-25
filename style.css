@@ -1,5 +1,7 @@
 .header-name{
 	text-align: center;
+	text-decoration: underline;
+	padding-top: 50px;
 }
 
 .loginForm{
@@ -13,6 +15,10 @@
 
 .loginForm button{
 	height: 40px;
-	width: 60px;
+	width: 70px;
 	font-weight: 800;
+}
+
+.validationError{
+	color: red;
 }

@@ -13,3 +13,4 @@ foodFinder.config(routeConfiguration);
 foodFinder.controller('loginController', function($scope){
 	console.log('Login Controller')
 });
+
