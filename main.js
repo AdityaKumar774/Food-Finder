@@ -9,7 +9,8 @@ function routeConfiguration($routeProvider){
 }
 	
 foodFinder.config(routeConfiguration);
-	
+
+//Login Controller
 foodFinder.controller('loginController', function($scope){
 	console.log('Login Controller')
 });
