@@ -32,3 +32,28 @@ body{
 	font-size: 25px;
 	font-weight: 900;
 }
+
+.main-content{
+	text-align: center;
+}
+
+.main-content h1{
+	text-decoration: underline;
+	padding-bottom: 50px;
+}
+
+.list{
+	display: inline-block;
+	color: #272932;
+	margin: 20px;
+	font-size: 25px;
+	font-weight: 900;
+}
+
+.list a{
+	color: #000;
+}
+
+.list a:hover{
+	color: #42F2F7;
+}
