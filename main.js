@@ -34,7 +34,7 @@ foodFinder.service('restaurantService', function(){
 		{
 			name: 'Indian Accent',
 			location: 'New Delhi',
-			meal_for_two: 'Rs. 5000/-',
+			meal_for_two: '₹ 5000/-',
 			recommended_for: 'A special occasion, birthday or anniversary',
 			image: '1.jpg',
 			rating: '4.5',
@@ -46,7 +46,7 @@ foodFinder.service('restaurantService', function(){
 		{
 			name: 'Peshwari',
 			location: 'Mumbai',
-			meal_for_two: 'Rs. 5000/-',
+			meal_for_two: '₹ 5000/-',
 			recommended_for: 'For your fix of great North-Indian food in a city where it’s fairly elusive',
 			image: '2.jpg',
 			rating: '4.1',
@@ -58,7 +58,7 @@ foodFinder.service('restaurantService', function(){
 		{
 			name: 'Villa Maya',
 			location: 'Trivandrum',
-			meal_for_two: 'Rs. 4000/-',
+			meal_for_two: '₹ 4000/-',
 			recommended_for: 'Calm and peace and leaving the chaos of the world outside',
 			image: '3.jpg',
 			rating: '4.3',
@@ -70,7 +70,7 @@ foodFinder.service('restaurantService', function(){
 		{
 			name: 'Bukhara',
 			location: 'New Delhi',
-			meal_for_two: 'Rs. 7000/-',
+			meal_for_two: '₹ 7000/-',
 			recommended_for: 'Taking your International clients for an Indian meal',
 			image: '4.jpg',
 			rating: '4.0',
@@ -82,7 +82,7 @@ foodFinder.service('restaurantService', function(){
 		{
 			name: 'Pinch of Spice',
 			location: 'Agra',
-			meal_for_two: 'Rs. 1300/-',
+			meal_for_two: '₹ 1300/-',
 			recommended_for: 'A quick meal when in town',
 			image: '5.jpg',
 			rating: '4.7',
@@ -103,8 +103,6 @@ foodFinder.controller('restaurantController', function($scope, restaurantService
 //Restaurant Details Controller
 foodFinder.controller('detailsController', function($scope, restaurantService, $routeParams, $http){
 	var list = restaurantService.restaurantLists;
-	$scope.showDetails = true;
-	console.log($routeParams.RestaurantIndex);
+	$scope.showDetails = false;
 	$scope.Restaurant = list[$routeParams.RestaurantIndex];
-	console.log('here');
 });

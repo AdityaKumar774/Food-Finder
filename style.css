@@ -11,6 +11,11 @@ body{
 	padding-top: 90px;
 	color: #0F110C;
 }
+@media screen and (max-width: 720px){
+	.header-name{
+		padding-top: 20px;
+	}
+}
 
 .loginForm{
 	text-align: center;
@@ -78,4 +83,26 @@ body{
 
 .restaurant-rating{
 	color: #000;
+}
+
+.details-list{
+	text-align: justify;
+	list-style: none;
+	padding-top: 20px;
+	font-size: 25px;
+	font-weight: 800;
+	margin: 0 auto;
+}
+
+.details-list li{
+	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-left: 100px;
+}
+@media screen and (max-width: 720px) {
+    .details-list li {
+					text-align: left;
+					padding-left: 2px;
+					padding-right: 15px;
+    }
 }

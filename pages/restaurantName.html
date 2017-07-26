@@ -3,7 +3,7 @@
 	<h1> Restaurants Around You </h1>
 	<ul class="list" ng-repeat="Restaurant in restaurantLists | filter:search">
 		<li>
-			<a class="restaurant-name" href="#!/Restaurants/{{ $index }}">
+			<a class="restaurant-name" ng-href="#!/Restaurants/{{ $index }}">
 				{{ Restaurant.name }}
 			</a> <br> <br>
 			<span class="restaurant-images">
