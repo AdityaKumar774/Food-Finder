@@ -9,14 +9,27 @@ function routeConfiguration($routeProvider){
 	$routeProvider.when('/home', {
 		templateUrl: 'pages/restaurantName.html'
 	});
+	$routeProvider.when('/Restaurant/:RestaurantIndex', {
+		templateUrl: 'pages/restaurantDetails.html'
+	});
 }
 	
 foodFinder.config(routeConfiguration);
 
 //Login Controller
-foodFinder.controller('loginController', function($scope){
-	console.log('Login Controller')
+foodFinder.controller('loginController', function($scope, $location) {
+	function goToHome(email,password) {																																							
+		if (email && password) {																																		
+			$location.url('home');																																										//Go to 'home' when submit button is clicked
+		} else {
+			console.log('not validated');
+		}
+	}
+	$scope.goToHome = goToHome;
 });
+
+//Login Controller
+
 
 //Restaurant Lists
 foodFinder.service('restaurantService', function(){
@@ -85,7 +98,14 @@ foodFinder.service('restaurantService', function(){
 });
 
 
-//Main Controller
-foodFinder.controller('mainController', function($scope, restaurantService) {
+//Restaurant Controller
+foodFinder.controller('restaurantController', function($scope, restaurantService) {
 	$scope.restaurantLists = restaurantService.restaurantLists;
+});
+
+//Details Controller
+foodFinder.controller('detailsController', function($scope, restaurantService){
+	$scope.restaurantLists = restaurantService.restaurantLists;
+	var restaurantLists = restaurantService.restaurantLists;
+	console.log('Details Controller');
 });
