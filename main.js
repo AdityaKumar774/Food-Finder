@@ -40,7 +40,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.5',
 			favourites: {
 				dish_name: 'The Tasting Menu',
-				dish_image:''
+				url:'http://i.ndtvimg.com/i/2015-06/fusion-food_625x350_71434106320.jpg'
 			}
 		},
 		{
@@ -52,7 +52,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.1',
 			favourites: {
 				dish_name: 'Sikandari Raan and Dal Bukhara',
-				dish_image:''
+				url:'http://i.ndtvimg.com/i/2017-05/raan_620x333_81495781975.jpg'
 			}
 		},
 		{
@@ -64,7 +64,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.3',
 			favourites: {
 				dish_name: 'Kerala Special and Fish Tikka',
-				dish_image:''
+				url:'http://www.tinyurbankitchen.com/wp-content/uploads/2012/09/7877877680_7f35977dab_z.jpg'
 			}
 		},
 		{
@@ -76,7 +76,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.0',
 			favourites: {
 				dish_name: 'Dal Bukhara is legendary (albeit creamy and heavy)',
-				dish_image: ''
+				url: 'http://ungree.com/blog/wp-content/uploads/2015/11/Dal-Bukhara-Dal-Makhani.jpg'
 			}
 		},
 		{
@@ -88,7 +88,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.7',
 			favourites: {
 				dish_name: 'Punjabi meat',
-				dish_image: ''
+				url: 'http://media2.intoday.in/indiatoday/images/stories/mutton1-meatbhatindewala-story_647_070116125012.jpg'
 			}
 		}
 	]
@@ -105,4 +105,21 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 	var list = restaurantService.restaurantLists;
 	$scope.showDetails = false;
 	$scope.Restaurant = list[$routeParams.RestaurantIndex];
+
+//API Functioning
+	$scope.showDishDetails = function(url){
+		var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}';
+		$http({
+				'method': 'POST',
+				'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
+				'headers': {
+					'Authorization': 'Key b0da72a74c9743bcb90b9177240ac328',
+					'Content-Type': 'application/json'
+				},
+				'data': data
+			}).then(function(response) {
+				$scope.ingredients = response.data.outputs[0].data.concepts;
+					console.log(response);
+			});
+	}
 });
