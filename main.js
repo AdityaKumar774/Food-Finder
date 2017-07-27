@@ -122,7 +122,7 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 				'method': 'POST',
 				'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
 				'headers': {
-					'Authorization': 'Key f6d876aa272f4138bd669112435e40f7',													//key generated from www.clarifi.com
+					'Authorization': 'Key f6d876aa272f4138bd669112435e40f7',													//key generated from www.clarifai.com
 					'Content-Type': 'application/json'
 				},
 			'data': data,

@@ -148,40 +148,13 @@ input{
 }
 
 .veg-non-veg{
-	float: right;
-	padding-right: 80px;
-	padding-top: 20px;
+	float: left;
+	padding-left: 120px;
 }
-
-.v-n{
-	font-size: 10px;
-	padding-top: 25px;
-}
-
-.dish-veg, .dish-non-veg{
-	width: 33px;
-	height: 33px;
-}
-
-.dish-veg{
-	border: 2px solid #008000;
-}
-
-.dish-non-veg{
-	border: 2px solid #FF0000;
-}
-
-.dish-veg-circle, .dish-non-veg-circle{
-	width: 20px;
-	height: 20px;
-	margin: 5px;
-	border-radius: 50%;
-}
-
-.dish-veg-circle{
-	background-color: #008000;
-}
-
-.dish-non-veg-circle{
-	background-color: #FF0000;
+@media screen and (max-width: 720px){
+	.veg-non-veg{
+		padding-left: 20px;
+		padding-bottom: 20px;
+		margin: 0 auto;
+	}
 }
