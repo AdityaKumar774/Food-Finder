@@ -9,6 +9,18 @@
 		<div ng-if="Restaurant.favourites.url">
 			<li> <button class="ingredients-button" type="button" ng-show="Restaurant.favourites" ng-click="showDishDetails(Restaurant.favourites.url)" > Get Ingredients </button> </li><br>
 		</div>
+		<div class="veg-non-veg">
+			<div class="dish-veg" ng-if="vegDish">
+				<div class="dish-veg-circle">
+					<p class="v-n"> Veg </p>
+				</div>
+			</div>
+			<div class="dish-non-veg" ng-if="nonVegDish">
+				<div class="dish-non-veg-circle">
+					<p class="v-n"> Non-Veg </p>
+				</div>
+			</div>
+		</div>
 	</ul>
 	<div ng-if="ingredients">
 		<ul>
@@ -16,13 +28,5 @@
 		{{ingredient}}
 		</li>
 		</ul>
-</div><br>
-	<div class="dish-veg" ng-if="vegDish">
-	<div class="dish-veg-circle">
-	</div>
-</div>
-<div class="dish-non-veg" ng-if="nonVegDish">
-	<div class="dish-non-veg-circle">
-	</div>
 </div>
 </div>

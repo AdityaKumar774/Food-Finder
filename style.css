@@ -144,34 +144,44 @@ input{
 	background: #4D243D;
 	color: #ECDCC9;
 	padding: 10px;
+	display: none;
 }
 
-
-/*
-.dish-veg,
-.dish-non-veg{
-    width: 33px;
-    height: 33px;
-    padding: 5px;
-    position: absolute;
-    top: 30%;
-    right: 15px
+.veg-non-veg{
+	float: right;
+	padding-right: 80px;
+	padding-top: 20px;
 }
+
+.v-n{
+	font-size: 10px;
+	padding-top: 25px;
+}
+
+.dish-veg, .dish-non-veg{
+	width: 33px;
+	height: 33px;
+}
+
 .dish-veg{
-    border: 2px solid green;
+	border: 2px solid #008000;
 }
+
 .dish-non-veg{
-    border: 2px solid red;
+	border: 2px solid #FF0000;
 }
-.dish-veg-circle,
-.dish-non-veg-circle{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+
+.dish-veg-circle, .dish-non-veg-circle{
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	border-radius: 50%;
 }
+
 .dish-veg-circle{
-    background-color: green;
+	background-color: #008000;
 }
+
 .dish-non-veg-circle{
-    background-color: red;
-}*/
+	background-color: #FF0000;
+}
