@@ -5,8 +5,15 @@
 		<li>Recomended for &#58; <em>{{ Restaurant.recommended_for }}</em> </li>
 		<li>Meal for 2 &#58; <em>{{ Restaurant.meal_for_two }}</em> </li>
 		<li>Best for &#58; <em>{{ Restaurant.favourites.dish_name }}</em> </li>
-		<li>Best dish &#58;<br> <img src="{{ Restaurant.favourites.url }}"> </li>
-		<li> <button type="button" ng-if="Restaurant.favourites" ng-click="showDishDetails(Restaurant.favourites.url)">Get Ingredients</button> </li>
 		<li>Rating &#58; <em>{{ Restaurant.rating }} &nbsp; <i class="fa fa-star-o"></i></em> </li>
+		<li>Best dish &#58;<br> <img src="{{ Restaurant.favourites.url }}"> </li>
+		<li> <button type="button" ng-show="Restaurant.favourites" ng-click="showDishDetails(Restaurant.favourites.url)">Get Ingredients</button> </li><br>
 	</ul>
+	<div ng-if="ingredients">
+		<ul>
+		<li class="ingredients-list" ng-repeat="ingredient in ingredients">
+		{{ingredient}}
+		</li>
+		</ul>
+</div>
 </div>

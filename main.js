@@ -105,6 +105,7 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 	var list = restaurantService.restaurantLists;
 	$scope.showDetails = false;
 	$scope.Restaurant = list[$routeParams.RestaurantIndex];
+	$scope.ingredients = [];
 
 //API Functioning
 	$scope.showDishDetails = function(url){
@@ -113,13 +114,21 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 				'method': 'POST',
 				'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
 				'headers': {
-					'Authorization': 'Key b0da72a74c9743bcb90b9177240ac328',
+					'Authorization': 'Key f6d876aa272f4138bd669112435e40f7',
 					'Content-Type': 'application/json'
 				},
-				'data': data
-			}).then(function(response) {
-				$scope.ingredients = response.data.outputs[0].data.concepts;
-					console.log(response);
-			});
-	}
+				'data': data,
+		}).then (function(response) {
+			var ingredients = response.data.outputs[0].data.concepts;
+			console.log(response);
+			var list = '';
+			for (var i =0; i < ingredients.length; i++) {
+							$scope.ingredients.push(ingredients[i].name);
+			}
+		})
+		};
 });
+
+
+
+

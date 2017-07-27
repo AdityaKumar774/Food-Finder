@@ -106,3 +106,15 @@ body{
 					padding-right: 15px;
     }
 }
+
+.ingredients-list{
+	list-style: none;
+	display: inline-block;
+	border: 1px solid #000;
+	text-align: center;
+	text-transform: capitalize;
+	margin: 5px;
+	font-size: 30px;
+	font-weight: 800;
+	background: #fff;
+}
