@@ -41,7 +41,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.5',
 			favourites: {
 				dish_name: 'The Tasting Menu',
-				url:'http://i.ndtvimg.com/i/2015-06/fusion-food_625x350_71434106320.jpg'
+				url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAuV2tjVbge5fspqvcB_4COXGj1_FJfqJh9ic4UB3Ou4MoVB0k'
 			}
 		},
 		{
@@ -109,8 +109,11 @@ foodFinder.controller('restaurantController', function($scope, restaurantService
 foodFinder.controller('detailsController', function($scope, restaurantService, $routeParams, $http){
 	var list = restaurantService.restaurantLists;
 	$scope.showDetails = false;
+	$scope.nonVegDish = false;
+	$scope.vegDish = false;
 	$scope.Restaurant = list[$routeParams.RestaurantIndex];
 	$scope.ingredients = [];
+	var nonVegList = ['egg', 'chicken', 'meat', 'pork', 'fish', 'lamb'];
 
 //API Functioning
 	$scope.showDishDetails = function(url){
@@ -122,13 +125,17 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 					'Authorization': 'Key f6d876aa272f4138bd669112435e40f7',													//key generated from www.clarifi.com
 					'Content-Type': 'application/json'
 				},
-				'data': data,
-		}).then (function(response) {
-			var ingredients = response.data.outputs[0].data.concepts;
+			'data': data,
+			}).then (function(response) {
+			var ingredient = response.data.outputs[0].data.concepts;
 			var list = '';
-			for (var i =0; i < ingredients.length; i++) {																												//Showing the ingredients in html page
-							$scope.ingredients.push(ingredients[i].name);
+			for (var i =0; i < ingredient.length; i++) {																												//Showing the ingredients in html page
+				$scope.ingredients.push(ingredient[i].name);
+				if(nonVegList.indexOf(ingredient[i].name) != -1 && $scope.nonVegDish != true)
+					$scope.nonVegDish = true;
 			}
+			 if(!$scope.nonVegDish)
+					$scope.vegDish = true;
 		})
-	};
+	}
 });

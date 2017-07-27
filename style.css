@@ -3,6 +3,17 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin: 0 auto;
+	font-family: 'Belgrano';
+}
+
+button{
+	font-family: 'Belgrano';
+}
+
+input{
+	font-family: 'Belgrano';
+	font-size: 20px;
+	font-weight: 700;
 }
 
 .header-name{
@@ -23,20 +34,23 @@ body{
 
 .loginForm input{
 	font-weight: 800;
-	height: 30px;
 	width: 300px;
+}
+
+.loginForm input:hover, .loginForm input:focus{
+	background-color: #D4DCFF;
 }
 
 .loginForm button{
 	height: 40px;
-	width: 70px;
+	font-size: 25px;
 	font-weight: 800;
 }
 
 .validationError{
-	color: red;
-	font-size: 25px;
-	font-weight: 900;
+	color: #3C1518;
+	font-size: 20px;
+	font-weight: 800;
 }
 
 .main-content{
@@ -54,13 +68,17 @@ body{
 	color: #272932;
 	margin: 20px;
 	font-size: 25px;
-	font-weight: 900;
 	list-style: none;
 }
 
 .main-content input{
 	float: right;
 	margin-right: 20px;
+	height: 30px;
+}
+
+.main-content input:focus, .main-content input:hover{
+	background-color: #D4DCFF;
 }
 
 .restaurant-name{
@@ -69,7 +87,9 @@ body{
 }
 
 .restaurant-name:hover{
-	color: #42F2F7;
+	color: #3A405A;
+	text-decoration: underline;
+	font-weight: 900;
 }
 
 .restaurant-location{
@@ -105,13 +125,13 @@ body{
 
 .ingredients-button{
 	height: 50px;
-	font-size: 100x;
+	font-size: 20px;
 	font-weight: 800;
 }
 
 .ingredients-button:hover{
 	cursor: pointer;
-	color: #42F2F7;
+	color: #685044;
 }
 
 .ingredients-list{
@@ -121,6 +141,37 @@ body{
 	margin: 3px;
 	font-size: 20px;
 	font-weight: 900;
-	background: #42F2F7;
+	background: #4D243D;
+	color: #ECDCC9;
 	padding: 10px;
 }
+
+
+/*
+.dish-veg,
+.dish-non-veg{
+    width: 33px;
+    height: 33px;
+    padding: 5px;
+    position: absolute;
+    top: 30%;
+    right: 15px
+}
+.dish-veg{
+    border: 2px solid green;
+}
+.dish-non-veg{
+    border: 2px solid red;
+}
+.dish-veg-circle,
+.dish-non-veg-circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.dish-veg-circle{
+    background-color: green;
+}
+.dish-non-veg-circle{
+    background-color: red;
+}*/
