@@ -32,6 +32,7 @@ foodFinder.controller('loginController', function($scope, $location) {
 foodFinder.service('restaurantService', function(){
 	this.restaurantLists = [
 		{
+			id: 0,
 			name: 'Indian Accent',
 			location: 'New Delhi',
 			meal_for_two: '₹ 5000/-',
@@ -44,6 +45,7 @@ foodFinder.service('restaurantService', function(){
 			}
 		},
 		{
+			id: 1,
 			name: 'Peshwari',
 			location: 'Mumbai',
 			meal_for_two: '₹ 5000/-',
@@ -56,6 +58,7 @@ foodFinder.service('restaurantService', function(){
 			}
 		},
 		{
+			id: 2,
 			name: 'Villa Maya',
 			location: 'Trivandrum',
 			meal_for_two: '₹ 4000/-',
@@ -64,10 +67,11 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.3',
 			favourites: {
 				dish_name: 'Kerala Special and Fish Tikka',
-				url:'http://www.tinyurbankitchen.com/wp-content/uploads/2012/09/7877877680_7f35977dab_z.jpg'
+				url:'http://www.royalindiarestobar.com.au/wp-content/uploads/2016/06/Fish-Tikka.jpg'
 			}
 		},
 		{
+			id: 3,
 			name: 'Bukhara',
 			location: 'New Delhi',
 			meal_for_two: '₹ 7000/-',
@@ -76,10 +80,11 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.0',
 			favourites: {
 				dish_name: 'Dal Bukhara is legendary (albeit creamy and heavy)',
-				url: 'http://ungree.com/blog/wp-content/uploads/2015/11/Dal-Bukhara-Dal-Makhani.jpg'
+				url: 'https://storage.googleapis.com/postpickle/2016/headings/1470904892.jpeg'
 			}
 		},
 		{
+			id: 4,
 			name: 'Pinch of Spice',
 			location: 'Agra',
 			meal_for_two: '₹ 1300/-',
@@ -114,21 +119,16 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 				'method': 'POST',
 				'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
 				'headers': {
-					'Authorization': 'Key f6d876aa272f4138bd669112435e40f7',
+					'Authorization': 'Key f6d876aa272f4138bd669112435e40f7',													//key generated from www.clarifi.com
 					'Content-Type': 'application/json'
 				},
 				'data': data,
 		}).then (function(response) {
 			var ingredients = response.data.outputs[0].data.concepts;
-			console.log(response);
 			var list = '';
-			for (var i =0; i < ingredients.length; i++) {
+			for (var i =0; i < ingredients.length; i++) {																												//Showing the ingredients in html page
 							$scope.ingredients.push(ingredients[i].name);
 			}
 		})
-		};
+	};
 });
-
-
-
-

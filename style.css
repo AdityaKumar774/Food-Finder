@@ -72,10 +72,6 @@ body{
 	color: #42F2F7;
 }
 
-.restaurant-name:active{
-	color: #42F2F7;
-}
-
 .restaurant-location{
 	color: #000;
 	text-align: center;
@@ -107,14 +103,24 @@ body{
     }
 }
 
-.ingredients-list{
-	list-style: none;
-	display: inline-block;
-	border: 1px solid #000;
-	text-align: center;
-	text-transform: capitalize;
-	margin: 5px;
-	font-size: 30px;
+.ingredients-button{
+	height: 50px;
+	font-size: 100x;
 	font-weight: 800;
-	background: #fff;
+}
+
+.ingredients-button:hover{
+	cursor: pointer;
+	color: #42F2F7;
+}
+
+.ingredients-list{
+	display: inline-table;
+	border: 1px solid #000;
+	text-transform: capitalize;
+	margin: 3px;
+	font-size: 20px;
+	font-weight: 900;
+	background: #42F2F7;
+	padding: 10px;
 }

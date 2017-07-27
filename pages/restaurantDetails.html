@@ -7,7 +7,7 @@
 		<li>Best for &#58; <em>{{ Restaurant.favourites.dish_name }}</em> </li>
 		<li>Rating &#58; <em>{{ Restaurant.rating }} &nbsp; <i class="fa fa-star-o"></i></em> </li>
 		<li>Best dish &#58;<br> <img src="{{ Restaurant.favourites.url }}"> </li>
-		<li> <button type="button" ng-show="Restaurant.favourites" ng-click="showDishDetails(Restaurant.favourites.url)">Get Ingredients</button> </li><br>
+		<li> <button class="ingredients-button" type="button" ng-show="Restaurant.favourites" ng-click="showDishDetails(Restaurant.favourites.url)"> Get Ingredients </button> </li><br>
 	</ul>
 	<div ng-if="ingredients">
 		<ul>
