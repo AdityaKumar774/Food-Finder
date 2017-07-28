@@ -41,7 +41,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.5',
 			favourites: {
 				dish_name: 'The Tasting Menu',
-				url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAuV2tjVbge5fspqvcB_4COXGj1_FJfqJh9ic4UB3Ou4MoVB0k'
+				url:'http://www.indianaccent.com/newdelhi/images/gallery-images/high-res/5.jpg'
 			}
 		},
 		{
@@ -80,7 +80,7 @@ foodFinder.service('restaurantService', function(){
 			rating: '4.0',
 			favourites: {
 				dish_name: 'Dal Bukhara is legendary (albeit creamy and heavy)',
-				url: 'https://storage.googleapis.com/postpickle/2016/headings/1470904892.jpeg'
+				url: 'https://i.ytimg.com/vi/bOOIjf2qLUY/hqdefault.jpg'
 			}
 		},
 		{
@@ -113,7 +113,7 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 	$scope.vegDish = false;
 	$scope.Restaurant = list[$routeParams.RestaurantIndex];
 	$scope.ingredients = [];
-	var nonVegList = ['egg', 'chicken', 'meat', 'pork', 'fish', 'lamb'];
+	var nonVegList = ['egg', 'chicken', 'meat', 'pork', 'fish', 'lamb'];							//Non-Veg items list
 
 //API Functioning
 	$scope.showDishDetails = function(url){
@@ -128,10 +128,11 @@ foodFinder.controller('detailsController', function($scope, restaurantService, $
 			'data': data,
 			}).then (function(response) {
 			var ingredient = response.data.outputs[0].data.concepts;
+			console.log(response);
 			var list = '';
 			for (var i =0; i < ingredient.length; i++) {																												//Showing the ingredients in html page
 				$scope.ingredients.push(ingredient[i].name);
-				if(nonVegList.indexOf(ingredient[i].name) != -1 && $scope.nonVegDish != true)
+				if(nonVegList.indexOf(ingredient[i].name) != -1 && $scope.nonVegDish != true)						//Checking Vegetarian or Non-Vegetarian
 					$scope.nonVegDish = true;
 			}
 			 if(!$scope.nonVegDish)
